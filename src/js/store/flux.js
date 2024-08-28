@@ -7,7 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					"name": "RaulSantana",
 					"phone": "612345678",
 					"email": "example@gmail.com",
-					"address": "Calle Falsa 123",
+					"address": "calle Falsa, 123",
 					"id": 6
 				},
 			]

@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "../../styles/home.css";
+import Card from "../component/Card";
+import { Context } from "../store/appContext";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		
-		
-	</div>
-);
+
+export const Home = () => {
+	const { store, actions } = useContext(Context);
+
+	useEffect(() => {
+		const initialize = async () => {
+			await actions.initializeUser();
+			actions.getContacts();
+		};
+
+		initialize();
+	}, []); 
+
+	return (
+		<div className="text-center">
+			<Card />
+		</div>
+	);
+};
